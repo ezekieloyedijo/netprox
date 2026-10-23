@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Modern study centre building with lab windows">
+  <defs>
+    <linearGradient id="cen-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF9F9"/><stop offset="1" stop-color="#D3F1F1"/></linearGradient>
+    <linearGradient id="cen-n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11566B"/><stop offset="1" stop-color="#0A3F4F"/></linearGradient>
+    <linearGradient id="cen-t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FE0E0"/><stop offset="1" stop-color="#00A6AA"/></linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#cen-bg)"/>
+  <g fill="none" stroke="#0A3F4F" stroke-opacity=".1" stroke-width="2">
+    <path d="M0 52h60l22 22h70"/><path d="M400 190h-70l-20-20h-60"/><path d="M40 240v-40l20-20"/><path d="M360 0v34l-18 18"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#0A3F4F" stroke-opacity=".18" stroke-width="2">
+    <circle cx="152" cy="74" r="5"/><circle cx="250" cy="170" r="5"/><circle cx="60" cy="180" r="5"/><circle cx="342" cy="52" r="5"/>
+  </g>
+  
+  <ellipse cx="200" cy="206" rx="150" ry="10" fill="#0A3F4F" fill-opacity=".1"/>
+  <rect x="86" y="70" width="228" height="134" rx="8" fill="url(#cen-n)"/>
+  <rect x="86" y="58" width="228" height="20" rx="6" fill="#0F5266"/>
+  <g fill="#7FE3E3" fill-opacity=".85">
+    <rect x="104" y="92" width="38" height="28" rx="3"/><rect x="152" y="92" width="38" height="28" rx="3" fill="#01C3C3"/><rect x="210" y="92" width="38" height="28" rx="3"/><rect x="258" y="92" width="38" height="28" rx="3" fill="#01C3C3"/>
+    <rect x="104" y="132" width="38" height="28" rx="3" fill="#01C3C3"/><rect x="152" y="132" width="38" height="28" rx="3"/><rect x="258" y="132" width="38" height="28" rx="3"/>
+  </g>
+  <rect x="206" y="140" width="46" height="64" rx="4" fill="#FFFFFF"/><path d="M229 140v64" stroke="#0A3F4F" stroke-width="2"/>
+  <rect x="140" y="172" width="54" height="16" rx="4" fill="#FFFFFF" fill-opacity=".9"/><path d="M148 180h38" stroke="#0A3F4F" stroke-width="3" stroke-linecap="round"/>
+  <g transform="translate(300 28)"><path d="M22 0a22 22 0 0 1 22 22c0 16-22 40-22 40S0 38 0 22A22 22 0 0 1 22 0z" fill="url(#cen-t)"/><circle cx="22" cy="22" r="8" fill="#FFFFFF"/></g>
+</svg>

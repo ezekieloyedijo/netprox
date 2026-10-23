@@ -1,0 +1,130 @@
+{
+  "_help": "Every course on the site. 'id' becomes the link anchor, e.g. /courses#dataanalysis. Use lowercase letters only and never change an id once it is shared. Values starting with [confirm] are held back from the production build.",
+
+  "networking": [
+    {
+      "id": "itessentials",
+      "level": "Foundation",
+      "name": "IT Essentials",
+      "learn": "Install, configure and troubleshoot computers; maintain Windows",
+      "duration": "3 months",
+      "preparesFor": "[confirm] certification",
+      "roles": "IT support technician"
+    },
+    {
+      "id": "ccstnetworking",
+      "level": "Level 1",
+      "name": "CCST Networking",
+      "learn": "Networking basics, devices and initial configuration, addressing and troubleshooting, network support and security",
+      "duration": "[confirm] one total duration",
+      "preparesFor": "Cisco Certified Support Technician (CCST) Networking",
+      "roles": "Network support technician, help desk"
+    },
+    {
+      "id": "ccna",
+      "level": "Level 2",
+      "name": "CCNA",
+      "learn": "Routing, switching, network security and automation basics",
+      "duration": "6 months",
+      "preparesFor": "Cisco CCNA",
+      "roles": "Network engineer, network administrator"
+    },
+    {
+      "id": "ccnaautomation",
+      "level": "Specialist",
+      "name": "CCNA Automation",
+      "learn": "Software development, APIs, Cisco platforms, infrastructure automation",
+      "duration": "7 months",
+      "preparesFor": "Cisco CCNA Automation",
+      "roles": "Network automation engineer"
+    }
+  ],
+
+  "cybersecurity": [
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "learn": "Endpoint security, network defence, cyber threat management, network support and security, incident response",
+      "duration": "6 months",
+      "preparesFor": "[confirm] CCST Cybersecurity, CCNA Cybersecurity, or both",
+      "roles": "Junior cybersecurity technician, cybersecurity support, SOC analyst"
+    }
+  ],
+  "cybersecurityEntry": "You will need basic networking knowledge. If you are new to networking, an adviser will recommend the right starting point.",
+  "cybersecurityEntryNote": "[confirm] whether networking fundamentals are included",
+
+  "certificateLine": "[confirm] Netprox Certificate of Completion",
+
+  "pathways": [
+    {
+      "id": "digitalfoundations",
+      "number": 1,
+      "name": "Digital Foundations",
+      "courses": [
+        { "id": "basiccomputer", "name": "Basic Computer Operations", "learn": "MS Word, Excel, PowerPoint, Outlook, email, safe internet use", "duration": "6 weeks", "roles": "Front desk officer, office assistant" }
+      ]
+    },
+    {
+      "id": "softwareandweb",
+      "number": 2,
+      "name": "Software and Web",
+      "courses": [
+        { "id": "webdesign", "name": "Web Design with Intro to UI/UX", "learn": "HTML5, CSS, JavaScript basics, Bootstrap, Figma", "duration": "3 months", "roles": "Web and product designer" },
+        { "id": "webdevelopment", "name": "Web Development", "bestAfter": "webdesign", "learn": "Frontend and backend: JavaScript, React, Python, MySQL", "duration": "4 months", "roles": "Frontend or full stack developer" },
+        { "id": "uiuxdesign", "name": "UI/UX Product Design", "learn": "Research, wireframing, prototyping, design systems in Figma", "duration": "3 months", "roles": "Product designer, UI/UX designer" },
+        { "id": "mobileapp", "name": "Mobile App Development with React Native", "bestAfter": "webdevelopment", "learn": "JavaScript, React Native, Firebase, MySQL, SQLite", "duration": "5 months", "roles": "Mobile app developer" },
+        { "id": "wordpress", "name": "Websites with WordPress", "learn": "CMS setup, themes, plugins, customisation, SEO", "duration": "[confirm]", "roles": "WordPress developer, website manager" }
+      ]
+    },
+    {
+      "id": "dataandai",
+      "number": 3,
+      "name": "Data and AI",
+      "courses": [
+        { "id": "dataanalysis", "name": "Data Analysis", "learn": "Excel, Power BI, Tableau, Python, MySQL", "duration": "3 months", "roles": "Data analyst, reporting officer" },
+        { "id": "datascience", "name": "Data Science", "bestAfter": "dataanalysis", "learn": "Statistical modelling, Python, machine learning foundations", "duration": "4 months", "roles": "Data scientist" },
+        { "id": "aiml", "name": "AI and Machine Learning", "bestAfter": "datascience", "learn": "Model building, training and deployment", "duration": "5 months", "roles": "Machine learning engineer" }
+      ]
+    },
+    {
+      "id": "creativeandmarketing",
+      "number": 4,
+      "name": "Creative and Marketing",
+      "courses": [
+        { "id": "graphicdesign", "name": "Graphic Design", "learn": "Adobe Photoshop, Adobe Illustrator, CorelDRAW", "duration": "2 months", "roles": "Graphic designer" },
+        { "id": "digitalmarketing", "name": "Digital Marketing", "learn": "SEO, display ads, email and social media marketing, Google Analytics, lead generation", "duration": "3 months", "roles": "Digital marketer, social media manager" }
+      ],
+      "note": "Running a business? Take Graphic Design and Digital Marketing together to create and promote your own content."
+    },
+    {
+      "id": "projectmanagement",
+      "number": 5,
+      "name": "Project Management",
+      "courses": [
+        { "id": "projectmanagement", "name": "Project Management", "learn": "Project phases, execution, issue management, Excel for projects, Scrum, Agile and Waterfall", "duration": "[confirm]", "roles": "Project coordinator, project manager" }
+      ]
+    }
+  ],
+
+  "diplomas": [
+    { "id": "ondsoftware", "name": "OND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years", "entry": "[confirm] five O level credits including English and Mathematics", "leadsTo": "HND, junior developer roles" },
+    { "id": "ondcyber", "name": "OND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years", "entry": "[confirm]", "leadsTo": "HND, cybersecurity support roles" },
+    { "id": "hndsoftware", "name": "HND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years after OND", "entry": "[confirm] OND plus industrial training", "leadsTo": "Software engineer, further study" },
+    { "id": "hndcyber", "name": "HND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years after OND", "entry": "[confirm] OND plus industrial training", "leadsTo": "Cybersecurity analyst" }
+  ],
+  "diplomaCiscoPoint": "[confirm] Cisco certification training built into the cybersecurity programmes.",
+
+  "tutorials": [
+    { "id": "jamb", "name": "JAMB/UTME", "for": "University entry", "includes": "4 subjects, plus full CBT mock exams", "duration": "[confirm]" },
+    { "id": "waec", "name": "WAEC", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "[confirm]" },
+    { "id": "neco", "name": "NECO", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "[confirm]" },
+    { "id": "gcse", "name": "GCSE", "for": "UK curriculum", "includes": "Subject tutorials", "duration": "[confirm]" }
+  ],
+
+  "corporate": [
+    { "id": "teamcyber", "title": "Cybersecurity awareness and skills", "text": "for IT and non IT staff" },
+    { "id": "teamnetworking", "title": "Networking", "text": "for IT support and infrastructure teams" },
+    { "id": "teamdata", "title": "Data and analytics", "text": "including our Fraud Analytics programme for banks and financial institutions" },
+    { "id": "teamdigital", "title": "Digital skills", "text": "for office teams: Microsoft Office, digital marketing, project management" }
+  ]
+}

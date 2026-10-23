@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Question and answer cards">
+  <defs>
+    <linearGradient id="faq-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF9F9"/><stop offset="1" stop-color="#D3F1F1"/></linearGradient>
+    <linearGradient id="faq-n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11566B"/><stop offset="1" stop-color="#0A3F4F"/></linearGradient>
+    <linearGradient id="faq-t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FE0E0"/><stop offset="1" stop-color="#00A6AA"/></linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#faq-bg)"/>
+  <g fill="none" stroke="#0A3F4F" stroke-opacity=".1" stroke-width="2">
+    <path d="M0 52h60l22 22h70"/><path d="M400 190h-70l-20-20h-60"/><path d="M40 240v-40l20-20"/><path d="M360 0v34l-18 18"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#0A3F4F" stroke-opacity=".18" stroke-width="2">
+    <circle cx="152" cy="74" r="5"/><circle cx="250" cy="170" r="5"/><circle cx="60" cy="180" r="5"/><circle cx="342" cy="52" r="5"/>
+  </g>
+  
+  <g transform="translate(84 46)">
+    <rect width="232" height="58" rx="12" fill="url(#faq-n)"/>
+    <circle cx="30" cy="29" r="16" fill="url(#faq-t)"/>
+    <path d="M25 24a5 5 0 1 1 7 4.5c-1.5.8-2 1.7-2 3.5M30 37v.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M58 24h120M58 38h80" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(84 118)">
+    <rect width="232" height="76" rx="12" fill="#FFFFFF" stroke="#0A3F4F" stroke-width="2.5"/>
+    <path d="M22 24h150M22 40h180M22 56h110" stroke="#0A3F4F" stroke-opacity=".3" stroke-width="5" stroke-linecap="round"/>
+    <path d="M22 24h60" stroke="#01C3C3" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

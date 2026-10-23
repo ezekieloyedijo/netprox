@@ -1,0 +1,15 @@
+{
+  "_help": "Questions on the FAQ page. Links: write [label](/page) to link to another page.",
+  "items": [
+    { "q": "Do I need experience to start?", "a": "No. Beginners start with Basic Computer Operations or IT Essentials. An adviser will help you choose." },
+    { "q": "Is the Cisco exam included in the fee?", "a": "No. The Cisco exam voucher is paid separately. Ask an adviser for the current price." },
+    { "q": "Who awards the OND and HND?", "a": "Bellarks Polytechnic awards the national diplomas. Netprox teaches them at our Lakowe study centre." },
+    { "q": "When do OND and HND admissions open?", "a": "Admissions open once final NBTE approval is in place. Register your interest and we will contact you." },
+    { "q": "Are classes online or in person?", "a": "Both. You can learn in person at our Lakowe study centre or online. Ask an adviser about the options for your course." },
+    { "q": "When are classes held?", "a": "We run weekday and weekend classes. An adviser will confirm the schedule for your course." },
+    { "q": "Can I pay in instalments?", "a": "Yes. You can pay your course fee in instalments. Ask an adviser about the payment plan for your course." },
+    { "q": "What certificate will I get?", "a": "Cisco courses prepare you for Cisco certification exams. Career courses earn a Netprox Certificate of Completion. OND and HND graduates receive their diploma from Bellarks Polytechnic." },
+    { "q": "Do you train company teams?", "a": "Yes. See [For Companies](/corporate/)." },
+    { "q": "Where are you?", "a": "{address} See [Contact](/contact/) for the map and opening hours." }
+  ]
+}

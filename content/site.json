@@ -1,0 +1,73 @@
+{
+  "_help": "Site-wide details. Any value that starts with [confirm] is treated as unconfirmed: the draft build shows it with a 'To confirm' marker, and the production build refuses to run until it is replaced. Write the confirmed text without the [confirm] tag.",
+
+  "name": "Netprox",
+  "legalName": "Netprox Limited",
+  "siteUrl": "https://netproxltd.com.ng",
+
+  "contact": {
+    "address": "Amazing Grace Mall, Lakowe, Lekki Epe Road, Lagos",
+    "mapQuery": "Amazing Grace Mall, Lakowe, Lekki Epe Expressway, Lagos",
+    "phone": "+234 808 828 8616",
+    "whatsapp": "2347070069959",
+    "_whatsappHelp": "WhatsApp number in international format, digits only, e.g. 2348012345678. Shown on the site as 0707 006 9959.",
+    "whatsappDisplay": "0707 006 9959",
+    "email": "support@netproxltd.com.ng",
+    "admissionsEmail": "admissions@netproxltd.com.ng",
+    "corporateEmail": "corporate@netproxltd.com.ng",
+    "hours": "Monday to Friday, 9am to 4pm",
+    "_hoursSchemaHelp": "Same hours in Google format, used for search results",
+    "hoursSchema": "Mo-Fr 09:00-16:00"
+  },
+
+  "_socialHelp": "Only live accounts. Supported networks: instagram, facebook, linkedin, x, tiktok. Example item: { \"network\": \"instagram\", \"url\": \"https://instagram.com/netprox\" }. Leave empty to show no icons.",
+  "social": [],
+
+  "forms": {
+    "_help": "Endpoint of a form service (for example Formspree or Web3Forms) that emails the Netprox inbox with a copy to admissions. While empty, forms open WhatsApp with the details filled in instead.",
+    "contactEndpoint": "",
+    "corporateEndpoint": "",
+    "diplomaInterestEndpoint": ""
+  },
+
+  "analytics": {
+    "_help": "Google Analytics 4 measurement ID, e.g. G-XXXXXXX. WhatsApp clicks are tracked as the event whatsapp_click with the course name.",
+    "ga4": ""
+  },
+
+  "partners": {
+    "_help": "Drop the official logo files into src/assets/img/partners/ and put the file names here. Until then the site shows the partner names as text. Use only the Cisco Networking Academy partner logo from the NetAcad portal, and only the Bellarks logo version Bellarks supplies.",
+    "ciscoAcademyLogo": "",
+    "bellarksLogo": ""
+  },
+
+  "schedules": "Weekday and weekend classes.",
+
+  "signoff": {
+    "_help": "Set each to true only once it has been confirmed in writing. The production build will not run while any is false.",
+    "whyNetproxPoints": true,
+    "bellarksPageWording": false,
+    "legalPagesReviewed": false
+  },
+
+  "nbteApproved": false,
+  "_nbteHelp": "Keep false until management confirms NBTE approval in writing. While false, the National Diplomas page shows Register your interest only, with no fees or start dates.",
+
+  "cohorts": {
+    "_help": "Next start dates shown on the home page. Leave the list empty to hide the section. Example item: { \"course\": \"CCNA\", \"start\": \"12 January 2027\", \"schedule\": \"Weekdays\" }",
+    "comingSoon": true,
+    "_comingSoonHelp": "While there are no dates, true shows a Coming soon message on the home page; false hides the section.",
+    "items": []
+  },
+
+  "testimonials": {
+    "_help": "Only real Netprox students with written permission. Example item: { \"quote\": \"...\", \"name\": \"Ada\", \"course\": \"Data Analysis\" }. Leave empty to hide.",
+    "items": []
+  },
+
+  "centre": {
+    "_help": "Two or three lines about the Lakowe facility, plus real photo file names placed in src/assets/img/centre/. Leave the text empty to hide the section.",
+    "text": "[confirm] Two or three lines on the Lakowe facility, labs and classrooms",
+    "photos": []
+  }
+}

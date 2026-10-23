@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Network switch connected to routers and devices">
+  <defs>
+    <linearGradient id="net-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF9F9"/><stop offset="1" stop-color="#D3F1F1"/></linearGradient>
+    <linearGradient id="net-n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11566B"/><stop offset="1" stop-color="#0A3F4F"/></linearGradient>
+    <linearGradient id="net-t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FE0E0"/><stop offset="1" stop-color="#00A6AA"/></linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#net-bg)"/>
+  <g fill="none" stroke="#0A3F4F" stroke-opacity=".1" stroke-width="2">
+    <path d="M0 52h60l22 22h70"/><path d="M400 190h-70l-20-20h-60"/><path d="M40 240v-40l20-20"/><path d="M360 0v34l-18 18"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#0A3F4F" stroke-opacity=".18" stroke-width="2">
+    <circle cx="152" cy="74" r="5"/><circle cx="250" cy="170" r="5"/><circle cx="60" cy="180" r="5"/><circle cx="342" cy="52" r="5"/>
+  </g>
+  
+  <g fill="none" stroke="#01C3C3" stroke-width="3" stroke-linecap="round">
+    <path d="M200 132V96M200 132l-92 34M200 132l92 34M200 132v54"/>
+  </g>
+  <g transform="translate(140 52)">
+    <rect width="120" height="48" rx="10" fill="url(#net-n)"/>
+    <g fill="#01C3C3"><rect x="12" y="14" width="10" height="10" rx="2"/><rect x="28" y="14" width="10" height="10" rx="2"/><rect x="44" y="14" width="10" height="10" rx="2" fill="#7FE3E3"/><rect x="60" y="14" width="10" height="10" rx="2"/><rect x="76" y="14" width="10" height="10" rx="2" fill="#7FE3E3"/></g>
+    <circle cx="102" cy="19" r="4" fill="#3FE0E0"/><path d="M12 34h60" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(176 112)"><circle cx="24" cy="22" r="22" fill="url(#net-t)"/><path d="M14 22h20M24 12v20M16 14l16 16M32 14 16 30" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/></g>
+  <g transform="translate(70 152)"><rect width="76" height="50" rx="8" fill="#FFFFFF" stroke="#0A3F4F" stroke-width="2.5"/><rect x="8" y="8" width="60" height="30" rx="4" fill="#0A3F4F"/><path d="M16 18h26M16 28h40" stroke="#01C3C3" stroke-width="3" stroke-linecap="round"/></g>
+  <g transform="translate(254 152)"><rect width="76" height="50" rx="8" fill="#FFFFFF" stroke="#0A3F4F" stroke-width="2.5"/><rect x="8" y="8" width="60" height="30" rx="4" fill="#0A3F4F"/><path d="M16 18h40M16 28h22" stroke="#7FE3E3" stroke-width="3" stroke-linecap="round"/></g>
+  <g transform="translate(182 178)"><rect width="36" height="44" rx="6" fill="url(#net-n)"/><circle cx="18" cy="14" r="4" fill="#01C3C3"/><path d="M10 28h16M10 34h16" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="3" stroke-linecap="round"/></g>
+</svg>

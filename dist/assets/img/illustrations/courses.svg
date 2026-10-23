@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Code editor, design canvas and data chart for career courses">
+  <defs>
+    <linearGradient id="cou-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF9F9"/><stop offset="1" stop-color="#D3F1F1"/></linearGradient>
+    <linearGradient id="cou-n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11566B"/><stop offset="1" stop-color="#0A3F4F"/></linearGradient>
+    <linearGradient id="cou-t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FE0E0"/><stop offset="1" stop-color="#00A6AA"/></linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#cou-bg)"/>
+  <g fill="none" stroke="#0A3F4F" stroke-opacity=".1" stroke-width="2">
+    <path d="M0 52h60l22 22h70"/><path d="M400 190h-70l-20-20h-60"/><path d="M40 240v-40l20-20"/><path d="M360 0v34l-18 18"/>
+  </g>
+  <g fill="#FFFFFF" stroke="#0A3F4F" stroke-opacity=".18" stroke-width="2">
+    <circle cx="152" cy="74" r="5"/><circle cx="250" cy="170" r="5"/><circle cx="60" cy="180" r="5"/><circle cx="342" cy="52" r="5"/>
+  </g>
+  
+  <g transform="translate(64 44)">
+    <rect width="180" height="128" rx="12" fill="url(#cou-n)"/>
+    <g fill="#FFFFFF" fill-opacity=".35"><circle cx="16" cy="14" r="4"/><circle cx="30" cy="14" r="4"/><circle cx="44" cy="14" r="4"/></g>
+    <g stroke-width="5" stroke-linecap="round">
+      <path d="M18 40h30" stroke="#01C3C3"/><path d="M56 40h50" stroke="#FFFFFF" stroke-opacity=".5"/>
+      <path d="M34 58h64" stroke="#7FE3E3"/><path d="M34 76h36" stroke="#FFFFFF" stroke-opacity=".45"/><path d="M78 76h44" stroke="#01C3C3"/>
+      <path d="M34 94h52" stroke="#7FE3E3" stroke-opacity=".7"/><path d="M18 112h24" stroke="#01C3C3"/>
+    </g>
+    <path d="M140 52l-14 14 14 14M156 52l14 14-14 14" fill="none" stroke="#3FE0E0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(220 92)">
+    <rect width="120" height="104" rx="12" fill="#FFFFFF" stroke="#0A3F4F" stroke-width="2.5"/>
+    <g fill="#01C3C3"><rect x="16" y="62" width="14" height="26" rx="3" fill-opacity=".5"/><rect x="38" y="48" width="14" height="40" rx="3" fill-opacity=".75"/><rect x="60" y="36" width="14" height="52" rx="3"/><rect x="82" y="24" width="14" height="64" rx="3" fill="#0A3F4F"/></g>
+    <path d="M16 18h40" stroke="#0A3F4F" stroke-opacity=".5" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(36 150)"><circle cx="22" cy="22" r="22" fill="url(#cou-t)"/><path d="M12 30l8-18 4 10 6-4 4 12" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
