@@ -234,7 +234,7 @@ ${body}
       <div class="footer-brand">
         <a href="/" aria-label="Netprox home">${logo(true)}</a>
         <p>Cisco certification, career tech training and national diplomas with Bellarks Polytechnic, at our Lakowe study centre.</p>
-        ${socials.length ? `<div class="socials">${socials.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="Netprox on ${esc(s.network)}">${I[s.network]}</a>`).join('')}</div>` : ''}
+        ${socials.length ? `<div class="socials">${socials.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="Netprox on ${esc({ tiktok: 'TikTok', linkedin: 'LinkedIn', x: 'X' }[s.network] || s.network.charAt(0).toUpperCase() + s.network.slice(1))}">${I[s.network]}</a>`).join('')}</div>` : ''}
       </div>
       <div><h3>Explore</h3><ul class="footer-links">${FOOT.slice(1, 6).map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('')}</ul></div>
       <div><h3>Netprox</h3><ul class="footer-links">${[FOOT[0], ...FOOT.slice(6)].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('')}</ul></div>
@@ -515,7 +515,7 @@ page('/tutorials/', 'JAMB, WAEC, NECO and GCSE Tutorials with CBT Practice in La
   <div class="grid cols-2">
     ${courses.tutorials.map(t => `<article class="card course reveal" id="${t.id}"><div class="card-body">
       <div class="course-top"><h3>${esc(t.name)}</h3>${copyBtn(t.id)}</div>
-      <dl class="facts">${fact('For', esc(t.for))}${fact('Includes', esc(t.includes))}${fact('Duration', val(t.duration, `Exam Tutorials: ${t.name} duration`))}</dl>
+      <dl class="facts">${fact('For', esc(t.for))}${fact('Includes', esc(t.includes))}${fact('Duration', val(t.duration, `Exam Tutorials: ${t.name} duration`))}${t.schedule ? fact('Schedule', esc(t.schedule)) : ''}</dl>
       <div class="course-actions">${waBtn({ label: 'Book a place for your child', text: `Hello, I would like to book a place for my child for ${t.name} tutorials, and to know the fees and next start date.`, track: `${t.name} tutorial`, cls: 'btn btn-wa btn-block' })}</div>
     </div></article>`).join('')}
   </div>

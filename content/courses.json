@@ -115,7 +115,7 @@
   "diplomaCiscoPoint": "[confirm] Cisco certification training built into the cybersecurity programmes.",
 
   "tutorials": [
-    { "id": "jamb", "name": "JAMB/UTME", "for": "University entry", "includes": "4 subjects, plus full CBT mock exams", "duration": "[confirm]" },
+    { "id": "jamb", "name": "JAMB/UTME", "for": "University entry", "includes": "4 subjects, plus full CBT mock exams", "duration": "Runs until the JAMB/UTME exam", "schedule": "Weekday class: Monday to Thursday. Weekend class: Friday and Saturday." },
     { "id": "waec", "name": "WAEC", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "[confirm]" },
     { "id": "neco", "name": "NECO", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "[confirm]" },
     { "id": "gcse", "name": "GCSE", "for": "UK curriculum", "includes": "Subject tutorials", "duration": "[confirm]" }

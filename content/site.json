@@ -6,22 +6,24 @@
   "siteUrl": "https://netproxltd.com.ng",
 
   "contact": {
-    "address": "Amazing Grace Mall, Lakowe, Lekki Epe Road, Lagos",
+    "address": "4th Floor, Amazing Grace Mall, Lakowe, Lekki Epe Road, Lagos",
     "mapQuery": "Amazing Grace Mall, Lakowe, Lekki Epe Expressway, Lagos",
     "phone": "+234 808 828 8616",
-    "whatsapp": "2347070069959",
-    "_whatsappHelp": "WhatsApp number in international format, digits only, e.g. 2348012345678. Shown on the site as 0707 006 9959.",
-    "whatsappDisplay": "0707 006 9959",
+    "whatsapp": "2348088288616",
+    "_whatsappHelp": "WhatsApp number in international format, digits only, e.g. 2348012345678. whatsappDisplay is how it is shown on the site.",
+    "whatsappDisplay": "+234 808 828 8616",
     "email": "support@netproxltd.com.ng",
     "admissionsEmail": "admissions@netproxltd.com.ng",
     "corporateEmail": "corporate@netproxltd.com.ng",
-    "hours": "Monday to Friday, 9am to 4pm",
+    "hours": "Monday to Friday, 9am to 4pm. Saturday: open for classes",
     "_hoursSchemaHelp": "Same hours in Google format, used for search results",
     "hoursSchema": "Mo-Fr 09:00-16:00"
   },
 
   "_socialHelp": "Only live accounts. Supported networks: instagram, facebook, linkedin, x, tiktok. Example item: { \"network\": \"instagram\", \"url\": \"https://instagram.com/netprox\" }. Leave empty to show no icons.",
-  "social": [],
+  "social": [
+    { "network": "facebook", "url": "https://www.facebook.com/netproxacademy" }
+  ],
 
   "forms": {
     "_help": "Endpoint of a form service (for example Formspree or Web3Forms) that emails the Netprox inbox with a copy to admissions. While empty, forms open WhatsApp with the details filled in instead.",
@@ -67,7 +69,7 @@
 
   "centre": {
     "_help": "Two or three lines about the Lakowe facility, plus real photo file names placed in src/assets/img/centre/. Leave the text empty to hide the section.",
-    "text": "[confirm] Two or three lines on the Lakowe facility, labs and classrooms",
+    "text": "Our study centre is on the 4th floor of Amazing Grace Mall in Lakowe, on the Lekki Epe Road. Students learn in small classes and work in hands-on labs, building, configuring and troubleshooting on real equipment and simulators. Exam candidates prepare here too, with computer based test (CBT) practice, and classes run on weekdays and weekends.",
     "photos": []
   }
 }
