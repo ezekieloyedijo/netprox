@@ -99,9 +99,10 @@ const logo = (light = false) => `<img src="/assets/img/${light ? 'netprox-logo-l
 
 function academyBadge() {
   const logoImg = site.partners.ciscoAcademyLogo
-    ? `<img src="/assets/img/partners/${esc(site.partners.ciscoAcademyLogo)}" alt="Cisco Networking Academy" height="34">`
+    ? `<img src="/assets/img/partners/${esc(site.partners.ciscoAcademyLogo)}" alt="Cisco Networking Academy" width="46" height="46">`
     : `<span class="dot">${I.net}</span>`;
   if (!site.partners.ciscoAcademyLogo) pending.add('Cisco Networking Academy partner logo file (partners.ciscoAcademyLogo), from the NetAcad portal');
+  else if (!site.partners.ciscoLogoFromNetAcad) pending.add('Cisco Networking Academy logo: replace with the official Academy partner logo from the NetAcad portal, then set partners.ciscoLogoFromNetAcad to true');
   return `<div class="academy-badge">${logoImg}<span>Cisco Networking Academy<small>Official Academy partner</small></span></div>`;
 }
 
@@ -414,7 +415,7 @@ ${cohorts.length ? `<section class="section alt"><div class="wrap">
 page('/networking/', 'Cisco CCNA and Networking Training in Lakowe, Lagos | Netprox',
   'IT Essentials, CCST Networking, CCNA and CCNA Automation at the Netprox Cisco Networking Academy in Lakowe, Lagos. Hands on labs, small classes.',
   `${pageHero({ crumb: 'Cisco Networking', eyebrow: 'Cisco Networking Academy', title: 'Cisco Networking', art: 'networking',
-    intro: `<p class="lead"><strong>${ciscoOpening}</strong></p><p>Start from the basics and build to network engineer. Each level prepares you for a recognised Cisco certification.</p>`,
+    intro: `<p class="lead"><strong>${ciscoOpening}</strong></p><p>Start from the basics and build to network engineer. Each level prepares you for a recognised industry certification.</p>`,
     extra: academyBadge().replace('academy-badge', 'academy-badge light') })}
 <section class="section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Your ladder</p><h2>Four levels, one career path</h2></div>
@@ -434,7 +435,7 @@ page('/cybersecurity/', 'Cisco Cybersecurity Training in Lakowe, Lagos | Netprox
     <div>${courses.cybersecurity.map(x => ciscoCard(x, 'Cybersecurity')).join('')}</div>
     <div class="stack">
       <div class="callout reveal">${I.info}<div><p><strong>Entry requirement:</strong> ${esc(courses.cybersecurityEntry)}</p>${isTbc(courses.cybersecurityEntryNote) ? `<p>${val(courses.cybersecurityEntryNote, 'Cybersecurity: are networking fundamentals included (courses.cybersecurityEntryNote)')}</p>` : has(courses.cybersecurityEntryNote) ? `<p>${esc(courses.cybersecurityEntryNote)}</p>` : ''}</div></div>
-      <div class="feature reveal"><span class="icon">${I.net}</span><div><h3>New to networking?</h3><p>Start with <a href="/networking/#itessentials">IT Essentials</a> or <a href="/networking/#ccstnetworking">CCST Networking</a>, then move on to cybersecurity.</p></div></div>
+      <div class="feature reveal"><span class="icon">${I.net}</span><div><h3>New to networking?</h3><p>You can start here. Networking fundamentals are built into the course, so you learn the basics before moving on to security.</p></div></div>
       ${waBtn({ label: 'Ask an adviser where to start', text: 'Hello, I would like advice on where to start with Cybersecurity.', track: 'Cybersecurity starting point' })}
     </div>
   </div>
@@ -677,7 +678,7 @@ if (PROD && list.length) {
 
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(DIST, { recursive: true });
-cpSync(join(ROOT, 'src', 'assets'), join(DIST, 'assets'), { recursive: true, filter: s => !s.endsWith('-source.jpg') });
+cpSync(join(ROOT, 'src', 'assets'), join(DIST, 'assets'), { recursive: true, filter: s => !/-source\.(jpe?g|png)$/.test(s) });
 // Rewrite root links ("/assets/…", "/courses/#x") as relative paths so the site works
 // from any folder on a host and when the files are opened straight from disk.
 // Draft builds point page links at index.html so double-clicking a file works;

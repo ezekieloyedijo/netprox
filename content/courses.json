@@ -8,7 +8,7 @@
       "name": "IT Essentials",
       "learn": "Install, configure and troubleshoot computers; maintain Windows",
       "duration": "3 months",
-      "preparesFor": "[confirm] certification",
+      "preparesFor": "CompTIA A+",
       "roles": "IT support technician"
     },
     {
@@ -16,7 +16,7 @@
       "level": "Level 1",
       "name": "CCST Networking",
       "learn": "Networking basics, devices and initial configuration, addressing and troubleshooting, network support and security",
-      "duration": "[confirm] one total duration",
+      "duration": "3 months",
       "preparesFor": "Cisco Certified Support Technician (CCST) Networking",
       "roles": "Network support technician, help desk"
     },
@@ -26,7 +26,7 @@
       "name": "CCNA",
       "learn": "Routing, switching, network security and automation basics",
       "duration": "6 months",
-      "preparesFor": "Cisco CCNA",
+      "preparesFor": "Cisco Certified Network Associate (CCNA)",
       "roles": "Network engineer, network administrator"
     },
     {
@@ -46,14 +46,14 @@
       "name": "Cybersecurity",
       "learn": "Endpoint security, network defence, cyber threat management, network support and security, incident response",
       "duration": "6 months",
-      "preparesFor": "[confirm] CCST Cybersecurity, CCNA Cybersecurity, or both",
+      "preparesFor": "Cisco Certified Support Technician (CCST) Cybersecurity, Cisco CCNA Cybersecurity, ISC2 Certified in Cybersecurity (CC)",
       "roles": "Junior cybersecurity technician, cybersecurity support, SOC analyst"
     }
   ],
-  "cybersecurityEntry": "You will need basic networking knowledge. If you are new to networking, an adviser will recommend the right starting point.",
-  "cybersecurityEntryNote": "[confirm] whether networking fundamentals are included",
+  "cybersecurityEntry": "No networking experience needed. Networking fundamentals are included in the course.",
+  "cybersecurityEntryNote": "",
 
-  "certificateLine": "[confirm] Netprox Certificate of Completion",
+  "certificateLine": "Netprox Certificate of Completion",
 
   "pathways": [
     {
@@ -73,7 +73,7 @@
         { "id": "webdevelopment", "name": "Web Development", "bestAfter": "webdesign", "learn": "Frontend and backend: JavaScript, React, Python, MySQL", "duration": "4 months", "roles": "Frontend or full stack developer" },
         { "id": "uiuxdesign", "name": "UI/UX Product Design", "learn": "Research, wireframing, prototyping, design systems in Figma", "duration": "3 months", "roles": "Product designer, UI/UX designer" },
         { "id": "mobileapp", "name": "Mobile App Development with React Native", "bestAfter": "webdevelopment", "learn": "JavaScript, React Native, Firebase, MySQL, SQLite", "duration": "5 months", "roles": "Mobile app developer" },
-        { "id": "wordpress", "name": "Websites with WordPress", "learn": "CMS setup, themes, plugins, customisation, SEO", "duration": "[confirm]", "roles": "WordPress developer, website manager" }
+        { "id": "wordpress", "name": "Websites with WordPress", "learn": "CMS setup, themes, plugins, customisation, SEO", "duration": "2 months", "roles": "WordPress developer, website manager" }
       ]
     },
     {
@@ -101,24 +101,24 @@
       "number": 5,
       "name": "Project Management",
       "courses": [
-        { "id": "projectmanagement", "name": "Project Management", "learn": "Project phases, execution, issue management, Excel for projects, Scrum, Agile and Waterfall", "duration": "[confirm]", "roles": "Project coordinator, project manager" }
+        { "id": "projectmanagement", "name": "Project Management", "learn": "Project phases, execution, issue management, Excel for projects, Scrum, Agile and Waterfall", "duration": "6 weeks", "roles": "Project coordinator, project manager" }
       ]
     }
   ],
 
   "diplomas": [
-    { "id": "ondsoftware", "name": "OND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years", "entry": "[confirm] five O level credits including English and Mathematics", "leadsTo": "HND, junior developer roles" },
-    { "id": "ondcyber", "name": "OND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years", "entry": "[confirm]", "leadsTo": "HND, cybersecurity support roles" },
-    { "id": "hndsoftware", "name": "HND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years after OND", "entry": "[confirm] OND plus industrial training", "leadsTo": "Software engineer, further study" },
-    { "id": "hndcyber", "name": "HND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "[confirm] usually 2 years after OND", "entry": "[confirm] OND plus industrial training", "leadsTo": "Cybersecurity analyst" }
+    { "id": "ondsoftware", "name": "OND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm] O level credits including English and Mathematics (remaining subjects to follow)", "leadsTo": "HND, junior developer roles" },
+    { "id": "ondcyber", "name": "OND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm]", "leadsTo": "HND, cybersecurity support roles" },
+    { "id": "hndsoftware", "name": "HND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm] OND plus industrial training", "leadsTo": "Software engineer, further study" },
+    { "id": "hndcyber", "name": "HND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm] OND plus industrial training", "leadsTo": "Cybersecurity analyst" }
   ],
   "diplomaCiscoPoint": "[confirm] Cisco certification training built into the cybersecurity programmes.",
 
   "tutorials": [
     { "id": "jamb", "name": "JAMB/UTME", "for": "University entry", "includes": "4 subjects, plus full CBT mock exams", "duration": "Runs until the JAMB/UTME exam", "schedule": "Weekday class: Monday to Thursday. Weekend class: Friday and Saturday." },
-    { "id": "waec", "name": "WAEC", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "[confirm]" },
-    { "id": "neco", "name": "NECO", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "[confirm]" },
-    { "id": "gcse", "name": "GCSE", "for": "UK curriculum", "includes": "Subject tutorials", "duration": "[confirm]" }
+    { "id": "waec", "name": "WAEC", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "Runs until the WAEC exam" },
+    { "id": "neco", "name": "NECO", "for": "Senior secondary", "includes": "Subject tutorials plus CBT practice", "duration": "Runs until the NECO exam" },
+    { "id": "gcse", "name": "GCSE", "for": "UK curriculum", "includes": "Subject tutorials", "duration": "Runs until the GCSE exams" }
   ],
 
   "corporate": [

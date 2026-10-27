@@ -39,8 +39,10 @@
 
   "partners": {
     "_help": "Drop the official logo files into src/assets/img/partners/ and put the file names here. Until then the site shows the partner names as text. Use only the Cisco Networking Academy partner logo from the NetAcad portal, and only the Bellarks logo version Bellarks supplies.",
-    "ciscoAcademyLogo": "",
-    "bellarksLogo": ""
+    "ciscoAcademyLogo": "cisco-networking-academy.png",
+    "_ciscoLogoHelp": "Set ciscoLogoFromNetAcad to true only when this file is the official Academy partner logo downloaded from the NetAcad portal.",
+    "ciscoLogoFromNetAcad": false,
+    "bellarksLogo": "bellarks-polytechnic.png"
   },
 
   "schedules": "Weekday and weekend classes.",
@@ -48,7 +50,7 @@
   "signoff": {
     "_help": "Set each to true only once it has been confirmed in writing. The production build will not run while any is false.",
     "whyNetproxPoints": true,
-    "bellarksPageWording": false,
+    "bellarksPageWording": true,
     "legalPagesReviewed": false
   },
 
