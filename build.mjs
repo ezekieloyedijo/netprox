@@ -327,7 +327,7 @@ const orgSchema = {
   const offers = [
     ['networking', 'Cisco Networking', 'From IT support to network engineer, with Cisco certification at every level', 'See networking courses', '/networking/'],
     ['cybersecurity', 'Cybersecurity', 'Cisco training for security careers, from support technician to SOC analyst', 'See cybersecurity', '/cybersecurity/'],
-    ['diplomas', 'National Diplomas', 'OND in Computer Science and HND in Software Engineering and Cybersecurity, awarded by Bellarks Polytechnic', 'Register your interest', '/diplomas/#register'],
+    ['diplomas', 'National Diplomas', 'OND in Computer Science and four specialist HNDs, awarded by Bellarks Polytechnic', 'Register your interest', '/diplomas/#register'],
     ['courses', 'Career Courses', 'Software, data, AI, design, marketing and project management', 'See all courses', '/courses/'],
     ['tutorials', 'Exam Tutorials', 'WAEC, NECO, JAMB and GCSE preparation with CBT practice', 'See tutorials', '/tutorials/']
   ];
@@ -457,15 +457,7 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
 </div></section>`);
 
 /* National Diplomas */
-{
-  const programmes = courses.diplomas.map(d => d.name);
-  const body = `${pageHero({ crumb: 'OND and HND', eyebrow: 'With Bellarks Polytechnic', title: 'National Diplomas with Bellarks Polytechnic', art: 'diplomas',
-    intro: '<p class="lead">Earn an OND in Computer Science, then an HND in Software Engineering or Cybersecurity, awarded by Bellarks Polytechnic and taught at the Netprox study centre in Lakowe. Our cybersecurity programmes also include Cisco training as part of the course.</p>',
-    extra: `<div class="callout warn" style="margin-top:20px">${I.alert}<div><p><strong>Admissions are not yet open.</strong> These programmes are subject to final NBTE approval. Register your interest and we will contact you as soon as admissions open.</p></div></div>` })}
-<section class="section"><div class="wrap">
-  <div class="section-head"><p class="eyebrow">Programmes</p><h2>OND and HND programmes</h2></div>
-  <div class="grid cols-2">
-    ${courses.diplomas.map(d => `<article class="card course reveal" id="${d.id}"><div class="card-body">
+const diplomaCard = d => `<article class="card course reveal" id="${d.id}"><div class="card-body">
       <div class="course-top"><h3>${esc(d.name)}</h3>${copyBtn(d.id)}</div>
       <dl class="facts">
         ${fact('Awarded by', esc(d.awardedBy))}
@@ -474,8 +466,24 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
         ${fact('Leads to', esc(d.leadsTo))}
       </dl>
       <div class="course-actions"><a class="btn btn-primary btn-block" href="#register" data-programme="${esc(d.name)}">Register your interest</a></div>
-    </div></article>`).join('')}
+    </div></article>`;
+{
+  const programmes = courses.diplomas.map(d => d.name);
+  const body = `${pageHero({ crumb: 'OND and HND', eyebrow: 'With Bellarks Polytechnic', title: 'National Diplomas with Bellarks Polytechnic', art: 'diplomas',
+    intro: '<p class="lead">Earn an OND in Computer Science, then specialise with an HND in Cybersecurity, Software and Web Development, Artificial Intelligence, or Networking and Systems Security. All are awarded by Bellarks Polytechnic and taught at the Netprox study centre in Lakowe. Our cybersecurity programmes also include Cisco training as part of the course.</p>',
+    extra: `<div class="callout warn" style="margin-top:20px">${I.alert}<div><p><strong>Admissions are not yet open.</strong> These programmes are subject to final NBTE approval. Register your interest and we will contact you as soon as admissions open.</p></div></div>` })}
+<section class="section"><div class="wrap">
+  <div class="section-head"><p class="eyebrow">Step 1</p><h2>Start with an OND in Computer Science</h2></div>
+  <div class="grid cols-2">${courses.diplomas.filter(d => d.level === 'OND').map(diplomaCard).join('')}
+    <aside class="pathway-box reveal">
+      <span class="icon">${I.cap}</span>
+      <h3>Where your OND leads</h3>
+      <p>After your OND in Computer Science, you can specialise in one of four HND programmes:</p>
+      <ul class="ticks">${courses.diplomas.filter(d => d.level === 'HND').map(d => `<li><a href="#${d.id}">${esc(d.name)}</a></li>`).join('')}</ul>
+    </aside>
   </div>
+  <div class="section-head" style="margin-top:48px"><p class="eyebrow">Step 2</p><h2>Specialise with an HND</h2><p class="lead">After your OND, choose one of four HND programmes.</p></div>
+  <div class="grid cols-2">${courses.diplomas.filter(d => d.level === 'HND').map(diplomaCard).join('')}</div>
 </div></section>
 <section class="section alt"><div class="wrap two-col">
   <div>
@@ -491,7 +499,7 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
     <h2 style="font-size:1.5rem">Register your interest</h2>
     <p class="lead" style="font-size:1rem">We will contact you as soon as admissions open.</p>
     ${form({ id: 'diploma-interest', endpoint: site.forms.diplomaInterestEndpoint, title: 'OND and HND interest registration', submit: 'Register my interest',
-      success: 'Thank you. You are on the list and we will contact you as soon as admissions open.', inbox: clean(c.admissionsEmail),
+      success: 'Thank you. You are on the list and we will contact you as soon as admissions open.', inbox: clean(c.email),
       fields: `${field('Name', 'di-name', 'text', 'required autocomplete="name"')}
       <div class="row">${field('Phone', 'di-phone', 'tel', 'required autocomplete="tel" inputmode="tel"')}${field('Email', 'di-email', 'email', 'autocomplete="email"')}</div>
       ${select('Programme', 'di-programme', opts(programmes), 'required')}
@@ -502,8 +510,8 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
   if (!site.signoff.bellarksPageWording) pending.add('Bellarks Polytechnic written approval of the National Diplomas page wording (signoff.bellarksPageWording)');
   notes.add('WhatsApp confirmation after a diploma interest registration needs a WhatsApp Business API or automation service (not possible from a static site alone)');
   if (!has(c.admissionsEmail)) pending.add('Admissions inbox email (contact.admissionsEmail)');
-  page('/diplomas/', 'OND Computer Science and HND Software Engineering, Cybersecurity | Netprox',
-    'OND in Computer Science and HND in Software Engineering and Cybersecurity, awarded by Bellarks Polytechnic and taught at the Netprox study centre in Lakowe, Lagos. Register your interest.', body);
+  page('/diplomas/', 'OND Computer Science and Specialist HNDs in Lakowe | Netprox',
+    'OND in Computer Science, then HND in Cybersecurity, Software and Web Development, Artificial Intelligence, or Networking and Systems Security. Awarded by Bellarks Polytechnic, taught in Lakowe, Lagos.', body);
 }
 
 /* Exam Tutorials */
@@ -607,7 +615,7 @@ page('/faq/', 'Frequently Asked Questions | Netprox, Lakowe, Lagos',
 <section class="section alt" id="enquiry"><div class="wrap two-col">
   <div><p class="eyebrow">Enquiry form</p><h2>Send us a message</h2><p class="lead">Tell us the course you are interested in and an adviser will reply.</p></div>
   ${form({ id: 'contact', endpoint: site.forms.contactEndpoint, title: 'Website enquiry', submit: 'Send message',
-    success: 'Thank you. An adviser will reply shortly.', inbox: clean(c.admissionsEmail),
+    success: 'Thank you. An adviser will reply shortly.', inbox: clean(c.email),
     fields: `${field('Name', 'ct-name', 'text', 'required autocomplete="name"')}
     <div class="row">${field('Phone', 'ct-phone', 'tel', 'required autocomplete="tel" inputmode="tel"')}${field('Email', 'ct-email', 'email', 'autocomplete="email"')}</div>
     ${select('Course of interest', 'ct-course', courseOptions, 'required')}

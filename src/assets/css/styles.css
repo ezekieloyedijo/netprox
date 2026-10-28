@@ -192,6 +192,15 @@ body.nav-open .wa-float { display: none; }
 .strip h2 { font-size: clamp(1.4rem, 4vw, 1.9rem); margin-bottom: 8px; }
 .strip p { margin: 0; color: var(--muted); }
 
+/* OND to HND pathway panel */
+.pathway-box { display: flex; flex-direction: column; gap: 12px; padding: 26px; border-radius: var(--radius); background: linear-gradient(150deg, var(--teal-soft), #fff 75%); border: 1px solid var(--teal-line); }
+.pathway-box .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--navy); color: var(--teal); }
+.pathway-box .icon svg { width: 26px; height: 26px; }
+.pathway-box h3 { margin: 4px 0 0; }
+.pathway-box p { margin: 0; color: var(--muted); }
+.pathway-box .ticks a { font-weight: 700; color: var(--navy); text-decoration: none; }
+.pathway-box .ticks a:hover { color: var(--teal-dark); text-decoration: underline; }
+
 /* Cohorts "coming soon" */
 .coming-soon { display: grid; gap: 18px; padding: 26px 24px; border-radius: 20px; background: #fff; border: 1px dashed var(--teal-line); }
 .coming-soon .icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; background: var(--teal-soft); color: var(--teal-dark); }

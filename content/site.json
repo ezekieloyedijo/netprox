@@ -12,7 +12,7 @@
     "whatsapp": "2348088288616",
     "_whatsappHelp": "WhatsApp number in international format, digits only, e.g. 2348012345678. whatsappDisplay is how it is shown on the site.",
     "whatsappDisplay": "+234 808 828 8616",
-    "email": "support@netproxltd.com.ng",
+    "email": "enquiries@netproxltd.com.ng",
     "admissionsEmail": "admissions@netproxltd.com.ng",
     "corporateEmail": "corporate@netproxltd.com.ng",
     "hours": "Monday to Friday, 9am to 4pm. Saturday: open for classes",
@@ -26,10 +26,10 @@
   ],
 
   "forms": {
-    "_help": "Endpoint of a form service (for example Formspree or Web3Forms) that emails the Netprox inbox with a copy to admissions. While empty, forms open WhatsApp with the details filled in instead.",
-    "contactEndpoint": "",
-    "corporateEndpoint": "",
-    "diplomaInterestEndpoint": ""
+    "_help": "Formspree endpoint for each form. Contact and diploma forms go to enquiries@, the corporate form to corporate@. While empty, forms open WhatsApp with the details filled in instead.",
+    "contactEndpoint": "https://formspree.io/f/xeaakjbq",
+    "corporateEndpoint": "https://formspree.io/f/xzeegplp",
+    "diplomaInterestEndpoint": "https://formspree.io/f/xpppragp"
   },
 
   "analytics": {
@@ -41,7 +41,7 @@
     "_help": "Drop the official logo files into src/assets/img/partners/ and put the file names here. Until then the site shows the partner names as text. Use only the Cisco Networking Academy partner logo from the NetAcad portal, and only the Bellarks logo version Bellarks supplies.",
     "ciscoAcademyLogo": "cisco-networking-academy.png",
     "_ciscoLogoHelp": "Set ciscoLogoFromNetAcad to true only when this file is the official Academy partner logo downloaded from the NetAcad portal.",
-    "ciscoLogoFromNetAcad": false,
+    "ciscoLogoFromNetAcad": true,
     "bellarksLogo": "bellarks-polytechnic.png"
   },
 
