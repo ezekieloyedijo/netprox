@@ -107,12 +107,12 @@
   ],
 
   "diplomas": [
-    { "id": "ondsoftware", "name": "OND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm] O level credits including English and Mathematics (remaining subjects to follow)", "leadsTo": "HND, junior developer roles" },
-    { "id": "ondcyber", "name": "OND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm]", "leadsTo": "HND, cybersecurity support roles" },
-    { "id": "hndsoftware", "name": "HND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm] OND plus industrial training", "leadsTo": "Software engineer, further study" },
-    { "id": "hndcyber", "name": "HND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": "[confirm] OND plus industrial training", "leadsTo": "Cybersecurity analyst" }
+    { "id": "ondsoftware", "name": "OND Computer Science (Software Engineering pathway)", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": ["O level credits in English, Mathematics, Physics, Chemistry and any other physical science", "Biology is not accepted in the subject combination", "Minimum JAMB score of 100"], "leadsTo": "HND Software Engineering, junior developer roles" },
+    { "id": "ondcyber", "name": "OND Computer Science (Cybersecurity pathway)", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": ["O level credits in English, Mathematics, Physics, Chemistry and any other physical science", "Biology is not accepted in the subject combination", "Minimum JAMB score of 100"], "leadsTo": "HND Cybersecurity, cybersecurity support roles" },
+    { "id": "hndsoftware", "name": "HND Software Engineering", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": ["OND in Computer Science from any NBTE accredited polytechnic", "Minimum of five O level credits, including English and Mathematics", "One year industrial attachment", "Proof of JAMB regularisation or an admission letter"], "leadsTo": "Software engineer, further study" },
+    { "id": "hndcyber", "name": "HND Cybersecurity", "awardedBy": "Bellarks Polytechnic", "duration": "2 years", "entry": ["OND in Computer Science from any NBTE accredited polytechnic", "Minimum of five O level credits, including English and Mathematics", "One year industrial attachment", "Proof of JAMB regularisation or an admission letter"], "leadsTo": "Cybersecurity analyst" }
   ],
-  "diplomaCiscoPoint": "[confirm] Cisco certification training built into the cybersecurity programmes.",
+  "diplomaCiscoPoint": "Cisco training included as part of the cybersecurity programmes.",
 
   "tutorials": [
     { "id": "jamb", "name": "JAMB/UTME", "for": "University entry", "includes": "4 subjects, plus full CBT mock exams", "duration": "Runs until the JAMB/UTME exam", "schedule": "Weekday class: Monday to Thursday. Weekend class: Friday and Saturday." },

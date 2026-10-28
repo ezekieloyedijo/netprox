@@ -217,6 +217,12 @@ tr:last-child td { border-bottom: 0; }
 .facts div { display: grid; grid-template-columns: 112px 1fr; gap: 10px; font-size: .94rem; }
 .facts dt { color: var(--muted); font-weight: 600; }
 .facts dd { margin: 0; color: var(--text); }
+.fact-list { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.fact-list li::marker { color: var(--teal-dark); }
+@media (max-width: 479px) {
+  .facts div { grid-template-columns: 1fr; gap: 2px; }
+  .facts dt { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+}
 .best-after { font-size: .86rem; color: var(--navy); background: var(--bg-alt); border-left: 3px solid var(--teal); padding: 8px 12px; border-radius: 0 8px 8px 0; }
 .best-after a { font-weight: 700; }
 .copy-link { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: #fff; color: var(--muted); font: inherit; font-size: .78rem; font-weight: 600; cursor: pointer; }

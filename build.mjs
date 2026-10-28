@@ -327,7 +327,7 @@ const orgSchema = {
   const offers = [
     ['networking', 'Cisco Networking', 'From IT support to network engineer, with Cisco certification at every level', 'See networking courses', '/networking/'],
     ['cybersecurity', 'Cybersecurity', 'Cisco training for security careers, from support technician to SOC analyst', 'See cybersecurity', '/cybersecurity/'],
-    ['diplomas', 'National Diplomas', 'OND and HND in Software Engineering and Cybersecurity, awarded by Bellarks Polytechnic', 'Register your interest', '/diplomas/#register'],
+    ['diplomas', 'National Diplomas', 'OND in Computer Science and HND in Software Engineering and Cybersecurity, awarded by Bellarks Polytechnic', 'Register your interest', '/diplomas/#register'],
     ['courses', 'Career Courses', 'Software, data, AI, design, marketing and project management', 'See all courses', '/courses/'],
     ['tutorials', 'Exam Tutorials', 'WAEC, NECO, JAMB and GCSE preparation with CBT practice', 'See tutorials', '/tutorials/']
   ];
@@ -460,7 +460,7 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
 {
   const programmes = courses.diplomas.map(d => d.name);
   const body = `${pageHero({ crumb: 'OND and HND', eyebrow: 'With Bellarks Polytechnic', title: 'National Diplomas with Bellarks Polytechnic', art: 'diplomas',
-    intro: '<p class="lead">Earn a national diploma in Software Engineering or Cybersecurity, awarded by Bellarks Polytechnic and taught at the Netprox study centre in Lakowe. Our cybersecurity diplomas build Cisco certification training into the programme, so you graduate with a national qualification and an industry certification.</p>',
+    intro: '<p class="lead">Earn an OND in Computer Science, then an HND in Software Engineering or Cybersecurity, awarded by Bellarks Polytechnic and taught at the Netprox study centre in Lakowe. Our cybersecurity programmes also include Cisco training as part of the course.</p>',
     extra: `<div class="callout warn" style="margin-top:20px">${I.alert}<div><p><strong>Admissions are not yet open.</strong> These programmes are subject to final NBTE approval. Register your interest and we will contact you as soon as admissions open.</p></div></div>` })}
 <section class="section"><div class="wrap">
   <div class="section-head"><p class="eyebrow">Programmes</p><h2>OND and HND programmes</h2></div>
@@ -470,7 +470,7 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
       <dl class="facts">
         ${fact('Awarded by', esc(d.awardedBy))}
         ${fact('Typical duration', val(d.duration, `Diplomas: ${d.name} duration (Bellarks)`))}
-        ${fact('Entry requirement', val(d.entry, `Diplomas: ${d.name} entry requirement (Bellarks)`))}
+        ${fact('Entry requirement', Array.isArray(d.entry) ? `<ul class="fact-list">${d.entry.map(e => `<li>${esc(e)}</li>`).join('')}</ul>` : val(d.entry, `Diplomas: ${d.name} entry requirement (Bellarks)`))}
         ${fact('Leads to', esc(d.leadsTo))}
       </dl>
       <div class="course-actions"><a class="btn btn-primary btn-block" href="#register" data-programme="${esc(d.name)}">Register your interest</a></div>
@@ -502,8 +502,8 @@ page('/courses/', 'Career Tech Courses in Lakowe, Lagos: Web, Data, AI, Design |
   if (!site.signoff.bellarksPageWording) pending.add('Bellarks Polytechnic written approval of the National Diplomas page wording (signoff.bellarksPageWording)');
   notes.add('WhatsApp confirmation after a diploma interest registration needs a WhatsApp Business API or automation service (not possible from a static site alone)');
   if (!has(c.admissionsEmail)) pending.add('Admissions inbox email (contact.admissionsEmail)');
-  page('/diplomas/', 'OND and HND in Software Engineering and Cybersecurity, Lakowe | Netprox',
-    'OND and HND in Software Engineering and Cybersecurity awarded by Bellarks Polytechnic, taught at the Netprox study centre in Lakowe, Lagos. Register your interest.', body);
+  page('/diplomas/', 'OND Computer Science and HND Software Engineering, Cybersecurity | Netprox',
+    'OND in Computer Science and HND in Software Engineering and Cybersecurity, awarded by Bellarks Polytechnic and taught at the Netprox study centre in Lakowe, Lagos. Register your interest.', body);
 }
 
 /* Exam Tutorials */
