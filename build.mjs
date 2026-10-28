@@ -93,7 +93,7 @@ const COURSE_MENU = [
   ['/diplomas/', 'OND and HND', 'National diplomas with Bellarks Polytechnic', 'cap'],
   ['/tutorials/', 'Exam Tutorials', 'WAEC, NECO, JAMB and GCSE with CBT', 'exam']
 ];
-const TOP_MENU = [['/', 'Home'], ['/corporate/', 'For Companies'], ['/about/', 'About']];
+const TOP_MENU = [['/', 'Home'], ['/corporate/', 'For Companies'], ['/about/', 'About'], ['/faq/', 'FAQ'], ['/contact/', 'Contact']];
 
 const logo = (light = false) => `<img src="/assets/img/${light ? 'netprox-logo-light-520' : 'netprox-logo-520'}.png" width="520" height="150" alt="Netprox">`;
 
@@ -179,7 +179,8 @@ function layout({ path, title, description, body, schema }) {
     <div class="m-courses">${COURSE_MENU.map(courseLink).join('')}</div>
     <a class="m-link" href="/corporate/"${cur('/corporate/')}>For Companies</a>
     <a class="m-link" href="/about/"${cur('/about/')}>About</a>
-    <div class="m-secondary"><a href="/faq/"${cur('/faq/')}>FAQ</a><a href="/contact/"${cur('/contact/')}>Contact</a></div>
+    <a class="m-link" href="/faq/"${cur('/faq/')}>FAQ</a>
+    <a class="m-link" href="/contact/"${cur('/contact/')}>Contact</a>
   </nav>
   <div class="mobile-nav-foot">${waBtn({ label: 'Chat with an adviser', text: adviserMsg, track: 'Adviser', cls: 'btn btn-wa btn-block', pos: 'menu' })}</div>
 </div>`;
@@ -220,7 +221,7 @@ ${PROD ? '' : '<div class="draft-bar">Draft preview. Items marked <span class="t
     <a class="brand" href="/" aria-label="Netprox home">${logo()}</a>
     ${deskNav}
     <div class="header-actions">
-      <div class="header-cta">${waBtn({ label: 'Chat with an adviser', text: adviserMsg, track: 'Adviser', cls: 'btn btn-wa btn-sm', pos: 'header' })}</div>
+      <div class="header-cta">${waBtn({ label: 'Chat with an adviser', text: adviserMsg, track: 'Adviser', cls: 'btn btn-wa btn-sm', pos: 'header' }).replace('<span>Chat with an adviser</span>', '<span class="cta-long">Chat with an adviser</span><span class="cta-short">WhatsApp us</span>')}</div>
       <button class="nav-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">${I.menu.replace(' class="i-menu"', '')}</button>
     </div>
   </div>
