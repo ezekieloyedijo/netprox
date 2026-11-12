@@ -582,7 +582,7 @@ page('/tutorials/', 'JAMB, WAEC, NECO and GCSE Tutorials with CBT Practice in La
 ${testimonials.length ? `<section class="section alt"><div class="wrap"><div class="section-head"><p class="eyebrow">Students</p><h2>In their words</h2></div>
   <div class="grid cols-3">${testimonials.map(t => `<figure class="quote reveal"><blockquote>“${esc(t.quote)}”</blockquote><figcaption><strong>${esc(t.name)}</strong> · ${esc(t.course)}</figcaption></figure>`).join('')}</div></div></section>` : ''}
 <section class="section${testimonials.length ? '' : ' alt'}"><div class="wrap"><div class="strip reveal"><div><h2>Come and see the labs</h2><p>Visit the Lakowe study centre or chat with an adviser about your goal.</p></div>${waBtn({ label: 'Chat with an adviser', text: adviserMsg, track: 'Adviser', pos: 'about' })}</div></div></section>`;
-  if (!ct.photos.length) pending.add('Real photos of the Lakowe centre, labs and classes (centre.photos)');
+  if (!ct.photos.length) notes.add('Real photos of the Lakowe centre, labs and classes can be added later (centre.photos)');
   page('/about/', 'About Netprox | Cisco Networking Academy in Lakowe, Lagos',
     'Netprox is a technology training company and Cisco Networking Academy in Lakowe, Lagos, delivering OND and HND programmes with Bellarks Polytechnic.', body);
 }
@@ -711,6 +711,33 @@ if (siteUrl) {
   writeFileSync(join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.filter(p => p.path !== '/404').map(p => `  <url><loc>${siteUrl}${p.path}</loc></url>`).join('\n')}\n</urlset>\n`);
 }
 writeFileSync(join(DIST, 'robots.txt'), PROD ? `User-agent: *\nAllow: /\n${siteUrl ? `Sitemap: ${siteUrl}/sitemap.xml\n` : ''}` : 'User-agent: *\nDisallow: /\n');
+// Apache or LiteSpeed hosting (cPanel public_html): HTTPS, no www, 404 page, caching
+if (PROD) writeFileSync(join(DIST, '.htaccess'), `ErrorDocument 404 /404.html
+DirectoryIndex index.html
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\\. [NC]
+  RewriteRule ^ https://${siteUrl.replace(/^https?:\/\//, '')}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
+</IfModule>
+`);
 
 console.log(`${PROD ? 'Production' : 'Draft'} build: ${files.length} pages written to dist/`);
 console.log('Content rule checks passed: no PIIT, Aptech, 22,000, campus, fees, # links or Apply Now; all internal links and anchors resolve.');

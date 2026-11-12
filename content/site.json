@@ -51,7 +51,7 @@
     "_help": "Set each to true only once it has been confirmed in writing. The production build will not run while any is false.",
     "whyNetproxPoints": true,
     "bellarksPageWording": true,
-    "legalPagesReviewed": false
+    "legalPagesReviewed": true
   },
 
   "nbteApproved": false,
