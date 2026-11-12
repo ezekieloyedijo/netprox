@@ -139,6 +139,11 @@ body.nav-open .wa-float { display: none; }
 .hero .lead { color: #C3DDE2; font-size: 1.1rem; max-width: 560px; }
 .hero .btn-row { margin-top: 26px; }
 .hero-art { max-width: 520px; margin: 0 auto; width: 100%; }
+.hero-video { position: relative; margin: 0 auto; border-radius: 24px; overflow: hidden; border: 1px solid rgba(1, 195, 195, .35); box-shadow: 0 24px 60px rgba(0, 0, 0, .35), 0 0 0 6px rgba(1, 195, 195, .08); background: var(--navy-deep); }
+.hero-video video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.hero-video::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(6, 30, 38, .65) 100%); pointer-events: none; }
+.hero-video figcaption { position: absolute; left: 14px; bottom: 14px; z-index: 1; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgba(6, 30, 38, .7); color: #fff; font-size: .85rem; font-weight: 600; backdrop-filter: blur(6px); }
+.hero-video figcaption svg { width: 16px; height: 16px; color: var(--teal); }
 .academy-badge { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 10px 16px 10px 12px; border-radius: 14px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); color: #fff; font-weight: 600; font-size: .92rem; }
 .academy-badge img { height: 46px; width: auto; background: #fff; border-radius: 8px; padding: 2px; }
 .academy-badge .dot { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--teal); color: var(--navy-deep); flex: none; }
@@ -299,6 +304,8 @@ tr:last-child td { border-bottom: 0; }
 .visit-photo figcaption { margin-top: 8px; font-size: .9rem; color: var(--muted); }
 .centre-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .centre-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.video-embed { max-width: 960px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--navy-deep); aspect-ratio: 16 / 9; }
+.video-embed iframe { display: block; width: 100%; height: 100%; border: 0; }
 .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4 / 3; background: var(--bg-alt); }
 .map iframe { width: 100%; height: 100%; border: 0; display: block; }
 

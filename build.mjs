@@ -352,7 +352,13 @@ const orgSchema = {
     </div>
     ${academyBadge()}
   </div>
-  <div class="hero-art"><img src="/assets/img/illustrations/hero.svg" width="560" height="480" alt="" fetchpriority="high"></div>
+  <figure class="hero-art hero-video">
+    <video muted loop playsinline preload="none" poster="/assets/video/lakowe-hero-poster.jpg" width="960" height="720" aria-label="Drone view of Amazing Grace Mall, home of the Netprox study centre in Lakowe" data-hero-video>
+      <source src="/assets/video/lakowe-hero-480.mp4" type="video/mp4" media="(max-width: 719px)">
+      <source src="/assets/video/lakowe-hero-720.mp4" type="video/mp4">
+    </video>
+    <figcaption>${I.pin}<span>Our Lakowe study centre</span></figcaption>
+  </figure>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -565,6 +571,10 @@ page('/tutorials/', 'JAMB, WAEC, NECO and GCSE Tutorials with CBT Practice in La
 {
   const ct = site.centre;
   const testimonials = site.testimonials.items;
+  const tourId = (ct.tourYoutube || '').trim().replace(/^.*(?:youtu\.be\/|v=|embed\/|shorts\/)/, '').replace(/[?&#].*$/, '');
+  // sections after the centre block alternate plain and tinted
+  const testimonialsAlt = !tourId;
+  const ctaAlt = testimonials.length ? !testimonialsAlt : !tourId;
   const body = `${pageHero({ crumb: 'About', eyebrow: 'Who we are', title: 'About Netprox', art: 'centre',
     intro: '<p class="lead">Netprox is a technology training company in Lakowe, Lagos. We train people for real tech jobs, from IT support and networking to cybersecurity, software, data and design.</p><p>As a Cisco Networking Academy, we teach the official Cisco curriculum and prepare students for Cisco certification exams. Our career courses are practical, project based and taught in small groups.</p>' })}
 <section class="section"><div class="wrap two-col">
@@ -580,9 +590,11 @@ page('/tutorials/', 'JAMB, WAEC, NECO and GCSE Tutorials with CBT Practice in La
     ${partnerStrip()}
   </div>
 </div></section>
-${testimonials.length ? `<section class="section alt"><div class="wrap"><div class="section-head"><p class="eyebrow">Students</p><h2>In their words</h2></div>
+${tourId ? `<section class="section alt" id="tour"><div class="wrap"><div class="section-head center"><p class="eyebrow">Drone tour</p><h2>See the Lakowe study centre from above</h2><p class="lead">Amazing Grace Mall on the Lekki Epe Road. Netprox is on the 4th floor.</p></div>
+  <div class="video-embed reveal"><iframe src="https://www.youtube-nocookie.com/embed/${esc(tourId)}?rel=0" title="Drone tour of the Netprox study centre at Amazing Grace Mall, Lakowe" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></section>` : ''}
+${testimonials.length ? `<section class="section${testimonialsAlt ? ' alt' : ''}"><div class="wrap"><div class="section-head"><p class="eyebrow">Students</p><h2>In their words</h2></div>
   <div class="grid cols-3">${testimonials.map(t => `<figure class="quote reveal"><blockquote>“${esc(t.quote)}”</blockquote><figcaption><strong>${esc(t.name)}</strong> · ${esc(t.course)}</figcaption></figure>`).join('')}</div></div></section>` : ''}
-<section class="section${testimonials.length ? '' : ' alt'}"><div class="wrap"><div class="strip reveal"><div><h2>Come and see the labs</h2><p>Visit the Lakowe study centre or chat with an adviser about your goal.</p></div>${waBtn({ label: 'Chat with an adviser', text: adviserMsg, track: 'Adviser', pos: 'about' })}</div></div></section>`;
+<section class="section${ctaAlt ? ' alt' : ''}"><div class="wrap"><div class="strip reveal"><div><h2>Come and see the labs</h2><p>Visit the Lakowe study centre or chat with an adviser about your goal.</p></div>${waBtn({ label: 'Chat with an adviser', text: adviserMsg, track: 'Adviser', pos: 'about' })}</div></div></section>`;
   if (!ct.photos.length) notes.add('Real photos of the Lakowe centre, labs and classes can be added later (centre.photos)');
   page('/about/', 'About Netprox | Cisco Networking Academy in Lakowe, Lagos',
     'Netprox is a technology training company and Cisco Networking Academy in Lakowe, Lagos, delivering OND and HND programmes with Bellarks Polytechnic.', body);
@@ -697,7 +709,7 @@ function relativise(html, path) {
   if (PROD && path === '/404') return html;
   const depth = path === '/' || path === '/404' ? 0 : path.split('/').filter(Boolean).length;
   const up = depth ? '../'.repeat(depth) : './';
-  return html.replace(/(href|src)="\/([^"]*)"/g, (_, attr, target) => {
+  return html.replace(/(href|src|poster)="\/([^"]*)"/g,(_, attr, target) => {
     if (target.startsWith('assets/')) return `${attr}="${up}${target}"`;
     const [page, hash] = target.split('#');
     const file = PROD ? page : page + 'index.html';
@@ -733,6 +745,7 @@ Options -Indexes
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
 </IfModule>
 
 <IfModule mod_deflate.c>

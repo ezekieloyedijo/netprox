@@ -12,6 +12,24 @@
     return 'https://wa.me/' + (cfg.wa || '') + '?text=' + encodeURIComponent(text);
   }
 
+  // Hero video: play only when motion and data use are fine, pause when off screen
+  var heroVideo = document.querySelector('[data-hero-video]');
+  if (heroVideo) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var saveData = navigator.connection && navigator.connection.saveData;
+    if (!reduce && !saveData) {
+      heroVideo.preload = 'auto';
+      var tryPlay = function () { var p = heroVideo.play(); if (p && p.catch) p.catch(function () {}); };
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries[0].isIntersecting ? tryPlay() : heroVideo.pause();
+        }).observe(heroVideo);
+      } else {
+        tryPlay();
+      }
+    }
+  }
+
   // Mobile menu (full-screen panel)
   var toggle = document.querySelector('.nav-toggle');
   var panel = document.getElementById('mobile-nav');
