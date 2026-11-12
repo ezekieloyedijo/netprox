@@ -72,6 +72,13 @@
   "centre": {
     "_help": "Two or three lines about the Lakowe facility, plus real photo file names placed in src/assets/img/centre/. Leave the text empty to hide the section.",
     "text": "Our study centre is on the 4th floor of Amazing Grace Mall in Lakowe, on the Lekki Epe Road. Students learn in small classes and work in hands-on labs, building, configuring and troubleshooting on real equipment and simulators. Exam candidates prepare here too, with computer based test (CBT) practice, and classes run on weekdays and weekends.",
-    "photos": []
+    "_photosHelp": "Web-sized photos in src/assets/img/centre/. Keep full-size camera originals in src/assets/img/centre/originals/ (not uploaded or committed). buildingPhoto is shown with the address so visitors recognise the building.",
+    "buildingPhoto": { "file": "building-front.jpg", "alt": "The blue Amazing Grace Mall building in Lakowe, home of the Netprox study centre on the 4th floor" },
+    "photos": [
+      { "file": "building-front.jpg", "alt": "Front of Amazing Grace Mall, Lakowe, with the Cisco Networking Academy partner sign" },
+      { "file": "classroom-screen.jpg", "alt": "Netprox classroom with desks facing a display screen" },
+      { "file": "building-side.jpg", "alt": "Side view of Amazing Grace Mall on the Lekki Epe Road" },
+      { "file": "classroom-desks.jpg", "alt": "Bright Netprox classroom with rows of desks and chairs" }
+    ]
   }
 }

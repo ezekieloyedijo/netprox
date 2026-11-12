@@ -144,6 +144,7 @@ function visitBlock() {
         <li><span class="icon">${I.mail}</span><div><strong>Email</strong>${has(c.email) ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : val(c.email, 'Netprox email address (contact.email)')}</div></li>
       </ul>
       <div class="btn-row">${waBtn({ label: 'Chat on WhatsApp', text: adviserMsg, track: 'Visit us', pos: 'visit' })}</div>
+      ${site.centre.buildingPhoto ? `<figure class="visit-photo"><img src="/assets/img/centre/${esc(site.centre.buildingPhoto.file)}" alt="${esc(site.centre.buildingPhoto.alt)}" width="1600" height="900" loading="lazy" decoding="async"><figcaption>Look for the blue Amazing Grace Mall building. We are on the 4th floor.</figcaption></figure>` : ''}
     </div>
     <div class="map"><iframe title="Map showing the Netprox study centre in Lakowe" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(site.contact.mapQuery)}&amp;output=embed"></iframe></div>
   </div>`;
@@ -570,7 +571,7 @@ page('/tutorials/', 'JAMB, WAEC, NECO and GCSE Tutorials with CBT Practice in La
   <div class="stack">
     <div><p class="eyebrow">Our centre</p><h2>The Lakowe study centre</h2>
       <p>${val(ct.text || '[confirm] Two or three lines on the Lakowe facility, labs and classrooms', 'About: two or three lines on the Lakowe centre (centre.text)')}</p></div>
-    ${ct.photos.length ? `<div class="grid cols-2">${ct.photos.map(p => `<img src="/assets/img/centre/${esc(p.file)}" alt="${esc(p.alt)}" loading="lazy" style="border-radius:16px;width:100%;aspect-ratio:4/3;object-fit:cover">`).join('')}</div>` : ''}
+    ${ct.photos.length ? `<div class="centre-photos">${ct.photos.map(p => `<img src="/assets/img/centre/${esc(p.file)}" alt="${esc(p.alt)}" loading="lazy" decoding="async">`).join('')}</div>` : ''}
   </div>
   <div class="stack">
     <div><p class="eyebrow">Our partnership</p><h2>With Bellarks Polytechnic</h2>
@@ -687,7 +688,7 @@ if (PROD && list.length) {
 
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(DIST, { recursive: true });
-cpSync(join(ROOT, 'src', 'assets'), join(DIST, 'assets'), { recursive: true, filter: s => !/-source\.(jpe?g|png)$/.test(s) });
+cpSync(join(ROOT, 'src', 'assets'), join(DIST, 'assets'), { recursive: true, filter: s => !/-source\.(jpe?g|png)$/.test(s) && !/[\\/]originals([\\/]|$)/.test(s) });
 // Rewrite root links ("/assets/…", "/courses/#x") as relative paths so the site works
 // from any folder on a host and when the files are opened straight from disk.
 // Draft builds point page links at index.html so double-clicking a file works;

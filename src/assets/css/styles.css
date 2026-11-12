@@ -294,6 +294,11 @@ tr:last-child td { border-bottom: 0; }
 .contact-list .icon { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 12px; background: var(--teal-soft); color: var(--teal-dark); }
 .contact-list .icon svg { width: 22px; height: 22px; }
 .contact-list strong { display: block; color: var(--navy-ink); font-size: .9rem; }
+.visit-photo { margin: 8px 0 0; }
+.visit-photo img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); }
+.visit-photo figcaption { margin-top: 8px; font-size: .9rem; color: var(--muted); }
+.centre-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.centre-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
 .map { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4 / 3; background: var(--bg-alt); }
 .map iframe { width: 100%; height: 100%; border: 0; display: block; }
 
