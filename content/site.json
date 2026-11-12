@@ -75,7 +75,7 @@
     "_photosHelp": "Web-sized photos in src/assets/img/centre/. Keep full-size camera originals in src/assets/img/centre/originals/ (not uploaded or committed). buildingPhoto is shown with the address so visitors recognise the building.",
     "buildingPhoto": { "file": "building-front.jpg", "alt": "The blue Amazing Grace Mall building in Lakowe, home of the Netprox study centre on the 4th floor" },
     "_tourHelp": "YouTube link or video ID for the drone tour on the About page. Leave empty to hide the section.",
-    "tourYoutube": "",
+    "tourYoutube": "https://youtu.be/sKIXCEpQJc8",
     "photos": [
       { "file": "building-front.jpg", "alt": "Front of Amazing Grace Mall, Lakowe, with the Cisco Networking Academy partner sign" },
       { "file": "classroom-screen.jpg", "alt": "Netprox classroom with desks facing a display screen" },
