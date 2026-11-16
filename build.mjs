@@ -640,20 +640,74 @@ page('/faq/', 'Frequently Asked Questions | Netprox, Lakowe, Lagos',
 }
 
 /* Legal */
-const legal = (path, crumb, title, intro, sections) => page(path, `${title} | Netprox`, `${title} for the Netprox website.`,
+const legal = (path, crumb, title, intro, sections, updated = String(year)) => page(path, `${title} | Netprox`, `${title} for the Netprox website.`,
   `${pageHero({ crumb, title, intro: `<p class="lead">${intro}</p>` })}
-<section class="section"><div class="wrap prose">${sections.map(([h, p]) => `<h2>${h}</h2>${p}`).join('')}
-<p><em>Last updated ${year}.</em></p></div></section>`);
+<section class="section"><div class="wrap prose">${sections.map(([h, p, id]) => `<h2${id ? ` id="${id}"` : ''}>${h}</h2>${p}`).join('')}
+<p><em>Last updated ${updated}.</em></p></div></section>`);
 if (!site.signoff.legalPagesReviewed) pending.add('Privacy policy and terms of use reviewed by management or a legal adviser (signoff.legalPagesReviewed)');
-const contactLine = () => `${has(c.email) ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : val(c.email, 'Netprox email address (contact.email)')} or WhatsApp`;
-legal('/privacy/', 'Privacy policy', 'Privacy policy', 'How Netprox Limited collects and uses your personal data when you use this website or contact us.', [
-  ['Who we are', `<p>This website is run by Netprox Limited, ${val(c.address, 'Lakowe address wording (contact.address)')}. We follow the Nigeria Data Protection Act 2023.</p>`],
-  ['What we collect', '<p>When you send a form or message us, we collect the details you give us, such as your name, phone number, email address, the course you are interested in and your message. If you register interest in a national diploma we also collect your highest qualification and the year of your O level results.</p><p>We use Google Analytics to understand how visitors use the site, including which WhatsApp buttons are clicked. This uses cookies and does not identify you by name.</p>'],
-  ['How we use it', '<p>We use your details only to answer your enquiry, tell you about the course or programme you asked about, and improve the website. We do not sell your data.</p>'],
-  ['Who we share it with', '<p>Your enquiry is handled by Netprox staff. Form and analytics service providers process data for us. Diploma interest registrations may be shared with Bellarks Polytechnic when admissions open, only for your application.</p>'],
-  ['How long we keep it', '<p>We keep enquiry details for up to two years unless you become a student, in which case student records rules apply.</p>'],
-  ['Your rights', `<p>You can ask to see, correct or delete your data, or stop receiving messages, by contacting us at ${contactLine()}.</p>`]
-]);
+const mailLink = e => has(e) ? `<a href="mailto:${esc(e)}">${esc(e)}</a>` : val(e, 'Netprox email address (contact.email)');
+const contactLine = () => `${mailLink(c.email)} or WhatsApp`;
+const ga = has(site.analytics.ga4);
+legal('/privacy/', 'Privacy policy', 'Privacy policy', 'How Netprox Limited collects, uses and protects your personal data when you use this website or contact us on WhatsApp, Facebook, Instagram, phone or email.', [
+  ['Who we are', `<p>Netprox Limited ("Netprox", "we", "us") is a technology training company at ${val(c.address, 'Lakowe address wording (contact.address)')}. We are responsible for the personal data described in this policy and we process it in line with the Nigeria Data Protection Act 2023 (NDPA).</p>
+<p>For any privacy question or request, contact us at ${mailLink(c.email)}, by phone on ${esc(c.phone)}, or on WhatsApp.</p>`],
+  ['Information we collect', `<p><strong>Information you give us.</strong> When you fill in a form on this website, message us or call us, we collect the details you choose to share:</p>
+<ul>
+<li>Contact form: your name, phone number, email address, the course you are interested in and your message.</li>
+<li>Corporate training form: your name, company, role, email address, phone number, number of staff, training area and message.</li>
+<li>OND and HND interest form: your name, phone number, email address, the programme you want, your highest qualification so far and the year of your O level results.</li>
+<li>Messages on WhatsApp, Facebook Messenger or Instagram: your name or profile name, phone number or account handle, and what you write to us.</li>
+<li>If you enrol: the details needed for your registration, classes, payments and certificates.</li>
+</ul>
+<p><strong>Information collected automatically.</strong> ${ga ? 'We use Google Analytics to see how visitors use the site, such as which pages are viewed and which WhatsApp buttons are clicked. Google Analytics uses cookies and gives us statistics, not your name.' : 'This website does not set its own cookies or use advertising trackers.'} Our hosting provider keeps standard server logs (IP address, browser type, pages requested and time) for security and to keep the site running.</p>`],
+  ['How we use your information', `<p>We use your information to:</p>
+<ul>
+<li>reply to your enquiry and send you the fees, start dates and details you asked for;</li>
+<li>register your interest in a programme and contact you when admissions open;</li>
+<li>enrol you, run your classes and issue certificates if you become a student;</li>
+<li>prepare corporate training proposals for your organisation;</li>
+<li>keep the website secure and improve it.</li>
+</ul>
+<p>We rely on your consent (for example, when you send a form or message us), on taking steps to enter into a contract with you (enrolment), on legal obligations (such as record keeping) and on our legitimate interest in running and improving our services. We do not sell your personal data, and we do not use it for automated decisions about you.</p>`],
+  ['WhatsApp, Facebook and Instagram', `<p>Our "Chat on WhatsApp" buttons open WhatsApp with a message already written. Nothing is sent until you press send. When you message us on WhatsApp, Facebook or Instagram, Meta Platforms provides the service and processes your messages under its own policies: the <a href="https://www.whatsapp.com/legal/privacy-policy" rel="noopener" target="_blank">WhatsApp Privacy Policy</a> and the <a href="https://www.facebook.com/privacy/policy/" rel="noopener" target="_blank">Meta Privacy Policy</a>.</p>
+<p>We receive your name or profile name, your phone number or account handle and the messages you send, and we use them only to answer you and help you enrol. If you fill in a lead form in one of our Facebook or Instagram adverts, we receive the details you enter in that form and use them in the same way.</p>`],
+  ['Who we share it with', `<p>Your information is handled by Netprox staff. We share it only with:</p>
+<ul>
+<li>service providers who help us run the website and handle enquiries: Formspree (delivers website form messages to our inbox), our website hosting provider${ga ? ', Google (Google Analytics)' : ''}, and Meta (WhatsApp, Facebook and Instagram messaging);</li>
+<li>Bellarks Polytechnic, if you register for an OND or HND, so your application can be processed;</li>
+<li>Cisco Networking Academy, if you enrol on a Cisco course, to create your learning account;</li>
+<li>authorities, where the law requires it.</li>
+</ul>
+<p>The map on our contact page is provided by Google Maps, and the drone tour on our About page is a YouTube video shown in privacy-enhanced mode. These services may set their own cookies when you use them.</p>`],
+  ['Transfers outside Nigeria', '<p>Some of our service providers, including Formspree, Google and Meta, store data outside Nigeria. Where this happens, we rely on the safeguards the NDPA allows, such as the provider\'s data protection commitments and contractual terms.</p>'],
+  ['How long we keep it', `<ul>
+<li>Enquiries and messages: up to two years from our last contact with you.</li>
+<li>OND and HND interest registrations: until the admissions cycle you registered for ends, plus one year.</li>
+<li>Student records: as long as needed for your studies and certificates, and as the law requires.</li>
+${ga ? '<li>Google Analytics data: 14 months.</li>' : ''}
+</ul>
+<p>After that, we delete the data or make it anonymous.</p>`],
+  ['How we protect it', '<p>We limit access to staff who need it, use services that encrypt data in transit, and the website runs over a secure HTTPS connection. No method is completely secure, but we work to protect your data and will act quickly on any breach as the NDPA requires.</p>'],
+  ['Your rights', `<p>Under the NDPA you have the right to:</p>
+<ul>
+<li>ask for a copy of the personal data we hold about you;</li>
+<li>ask us to correct data that is wrong or incomplete;</li>
+<li>ask us to delete your data;</li>
+<li>object to, or ask us to restrict, how we use it;</li>
+<li>ask for your data in a portable format;</li>
+<li>withdraw your consent at any time, including to messages from us.</li>
+</ul>
+<p>To use any of these rights, contact us at ${contactLine()}. We reply within 30 days. If you are not satisfied with our response, you can complain to the <a href="https://ndpc.gov.ng" rel="noopener" target="_blank">Nigeria Data Protection Commission</a>.</p>`],
+  ['How to delete your data', `<p>You can ask us to delete the personal data we hold about you at any time, including data from our website forms and from your WhatsApp, Facebook or Instagram messages with us.</p>
+<ol>
+<li>Send an email to ${mailLink(c.email)} with the subject "Data deletion request", or send the same message to us on WhatsApp at ${esc(c.whatsappDisplay)}.</li>
+<li>Include your name and the phone number, email address or social media account you used to contact us, so we can find your records.</li>
+<li>We will confirm receipt, delete your data from our records and our service providers' systems within 30 days, and tell you when it is done.</li>
+</ol>
+<p>We may need to keep a small amount of information where the law requires it, for example payment records for enrolled students. We will tell you if this applies. Copies of chats held in your own WhatsApp, Facebook or Instagram app are controlled by you and Meta. You can delete them in the app.</p>`, 'data-deletion'],
+  ['Children', '<p>Some of our exam tutorial students are under 18. If you are under 18, please ask a parent or guardian to contact us or fill in forms for you. If we learn that we have collected a child\'s data without a parent or guardian\'s consent, we will delete it.</p>'],
+  ['Changes to this policy', '<p>We may update this policy when our services or the law change. The date below shows the latest version. Significant changes will be shown on this page.</p>']
+], '16 November 2026');
 legal('/terms/', 'Terms of use', 'Terms of use', 'The terms that apply when you use the Netprox website.', [
   ['Using this site', '<p>This website gives information about Netprox courses and programmes. By using it you agree to these terms.</p>'],
   ['Course information', '<p>We keep course details, durations and schedules accurate, but they may change. Fees and start dates are confirmed by an adviser before you enrol. Cisco certification exam vouchers are paid separately from course fees.</p>'],
